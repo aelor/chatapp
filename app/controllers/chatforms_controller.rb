@@ -4,6 +4,7 @@ class ChatformsController < ApplicationController
   # GET /chatforms
   # GET /chatforms.json
   def index
+    @chatform = Chatform.new
     @chatforms = Chatform.all
   end
 
@@ -28,8 +29,8 @@ class ChatformsController < ApplicationController
 
     respond_to do |format|
       if @chatform.save
-        format.html { redirect_to @chatform, notice: 'Chatform was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @chatform }
+        format.html { redirect_to chatforms_path, notice: 'Chatform was successfully created.' }
+        format.json { render action: 'show', status: :created, location: chatforms_path }
       else
         format.html { render action: 'new' }
         format.json { render json: @chatform.errors, status: :unprocessable_entity }
