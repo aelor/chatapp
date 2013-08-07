@@ -3,8 +3,6 @@
         <td><%= chatform.content %></td>
         <td></td>
         <td></td>
-        <td><%= link_to 'Show', chatform %></td>
-        <td><%= link_to 'Edit', edit_chatform_path(chatform) %></td>
-        <td><%= link_to 'Destroy', chatform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= time_ago_in_words(chatform.created_at)%> ago.</td>
       </tr>
   
