@@ -1,23 +1,13 @@
 <div align="center">
 	<h1>Chat on, on  chatapp!</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Content</th>
-          <th></th>
-          <th></th>
-          <th></th>
-          </tr>
-      </thead>
-  
-  
     <h3>Chat messages (<%= @chatforms.count %>)</h3>
-      <tbody>
-        <%= render @chatforms.order("created_at ASC").last(15)%>
-      </tbody>
-    </table>
+      
+      
+
+      <ul id="texts">
+       <li> <%= render @chatforms.order("created_at ASC").last(15)%> </li>
+      </ul>
   <br />
-  
-  <%= render 'form'%>
+    <%= render 'form'%>
 </div>
