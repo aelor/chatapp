@@ -1,11 +1,11 @@
-<%= form_for(@chatform) do |f| %>
+<%= form_for(@chatform, remote: true) do |f| %>
   
   <%= render 'shared/error', object: @chatform%>
   <div class="field">
     Reply:<br>
     <%= f.text_field :content %>
   </div>
-  <div class="actions">
+  <div id="actions">
     <% f.submit %>
   </div>
 <% end %>

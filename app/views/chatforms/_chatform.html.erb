@@ -1,8 +1,2 @@
-
-      <tr>
-        <td><%= chatform.content %></td>
-        <td></td>
-        <td></td>
-        <td><%= time_ago_in_words(chatform.created_at)%> ago.</td>
-      </tr>
-  
+ <li><%= chatform.content %>&nbsp;&nbsp;
+<%= time_ago_in_words(chatform.created_at)%> ago.</li>
