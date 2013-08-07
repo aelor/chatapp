@@ -1,21 +1,23 @@
-<h1>Listing chatforms</h1>
+<div align="center">
+	<h1>Chat on, on  chatapp!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <%= render 'form'%>
+    <table>
+      <thead>
+        <tr>
+          <th>Content</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          </tr>
+      </thead>
   
-  <h3>Chat messages (<%= @chatforms.count %>)</h3>
-<tbody>
-  <%= render @chatforms.order("created_at DESC")%>
-</tbody>
-</table>
-<br />
-
-<%= link_to 'New Chatform', new_chatform_path %>
+  
+    <h3>Chat messages (<%= @chatforms.count %>)</h3>
+      <tbody>
+        <%= render @chatforms.order("created_at ASC").last(15)%>
+      </tbody>
+    </table>
+  <br />
+  
+  <%= render 'form'%>
+</div>
