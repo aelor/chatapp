@@ -1,0 +1,27 @@
+<h1>Listing chatforms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chatforms.each do |chatform| %>
+      <tr>
+        <td><%= chatform.content %></td>
+        <td><%= link_to 'Show', chatform %></td>
+        <td><%= link_to 'Edit', edit_chatform_path(chatform) %></td>
+        <td><%= link_to 'Destroy', chatform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chatform', new_chatform_path %>
