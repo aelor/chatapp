@@ -1,0 +1,8 @@
+<h1>Sessions#create</h1>
+<p><%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+        <br /><br />
+      <%= f.submit "Sign in"%>
+    <% end %></p>
