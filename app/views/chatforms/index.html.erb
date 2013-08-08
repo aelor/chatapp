@@ -1,3 +1,4 @@
+<%= link_to "sign out", signout_path, method: "delete"%>
 <div align="center">
 	<h1>Chat on, on  chatapp!</h1>
 
@@ -15,4 +16,9 @@
 
 
 <%= subscribe_to "/chatforms" %>
-
+<br />
+<h3>Currently on chatapp!</h3>
+<% User.all.each do |user|%>
+  <%= user.name %>
+  <br />
+<% end %>
