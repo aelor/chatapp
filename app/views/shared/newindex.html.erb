@@ -1,0 +1,15 @@
+	<h1>Chat on, on  chatapp!</h1>
+
+    <h3>Chat messages (<%= @chatforms.count %>)</h3>
+      
+     <script type="text/javascript">
+		var auto_refresh = setInterval(
+				function ()
+				{
+				$('#info').load('chatforms');
+				}, 2000); // refresh every 2000 milliseconds
+        </script> 
+
+<div id="info"></div>
+<br />
+<%= render 'form'%>

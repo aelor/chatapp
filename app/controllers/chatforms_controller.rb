@@ -11,6 +11,10 @@ class ChatformsController < ApplicationController
   # POST /chatforms.json
   def create
     @chatform = Chatform.create(chatform_params)
+
+
+PrivatePub.publish_to("/chatforms", chatform: @chatform)
+
   end
 
   private
