@@ -11,12 +11,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(name: params[:session][:name])
     if !user
+      user = User.new(name: params[:session][:name])
       sign_in user
       redirect_to chatforms_path
     else
-      flash.now[:error] = "Name already taken"
-      render 'new'
-      
+      sign_in user
+      redirect_to chatforms_path
     end
   end
 
