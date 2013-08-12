@@ -83,3 +83,13 @@
 .alert-block p + p {
   margin-top: 5px;
 }
+
+.lists {
+	margin-left: 400px;
+}
+
+ul {
+	list-style-type:none;
+	text-align: left;
+	line-height: 20px;
+}

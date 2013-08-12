@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @chatform.content %>
-</p>
-
-<%= link_to 'Edit', edit_chatform_path(@chatform) %> |
-<%= link_to 'Back', chatforms_path %>
+<%= link_to "sign out", signout_path, method: "delete"%>
+<h1>CHatform#show</h1>
+<%= javascript_include_tag "private_pub" %>
+ <ul id="textsnew">
+   <li> <%=render @chatforms.order("created_at ASC").last(15) %> </li>
+   </ul> 
+  <br />
+    <%= render 'form'%>
+</div>
+<%= subscribe_to "chatforms/new" %>

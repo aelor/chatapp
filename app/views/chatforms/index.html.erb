@@ -2,13 +2,37 @@
 <div align="center">
 	<h1>Chat on, on  chatapp!</h1>
 
-    <h3>Chat messages (<%= @chatforms.count %>)</h3>
-      
-      
-
+    <h3 id="counter"><%= pluralize(@chatforms.count, "Message") %></h3>
+      <script>
+      	$(document).ready(function() {
+      		 	$("input").change(function(){
+      		 		var count = $("li").length;
+					    if(count>14&&($("#chatform_content").val()))
+					    {
+					    $("li:first").slideUp("normal", function() { 
+					    	$(this).remove(); 
+					    	});
+					    }
+					  });
+      	});
+      	
+     
+      /*	function greet()
+					{
+						var count = $("ul li").length;
+						if(count > 15 )
+							 {
+							$("li:first").slideUp(1000);
+							} 
+					}
+      	*/
+      	
+      </script>
+   <div class="lists">
       <ul id="texts">
-       <li> <%= render @chatforms.order("created_at ASC").last(15)%> </li>
-      </ul>
+        <%= render @chatforms.order("created_at ASC").last(15)%>
+   </ul> 
+   </div>
   <br />
     <%= render 'form'%>
 </div>
