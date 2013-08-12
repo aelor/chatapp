@@ -11,6 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    background: url("http://192.168.18.23:3000/assets/page_bg.jpg") repeat-x scroll 0 0 #323232;
+    color: #EEEEEE;
+    font: 15px Calibri,Arial,sans-serif;
+}
+
+
+
 .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
@@ -85,11 +94,110 @@
 }
 
 .lists {
-	margin-left: 400px;
+	margin-left: 370px;
 }
 
 ul {
 	list-style-type:none;
 	text-align: left;
-	line-height: 20px;
+	line-height: 30px;
+}
+
+ul li{
+	width: 410px;
+	
+}
+
+h1
+{
+	margin-top: 50px;
+	z-index: 2;
+	position:relative;
+}
+
+.rounded {
+    border-radius: 4px 4px 4px 4px;
+}
+
+#chat 
+{
+	
+    background: url("http://192.168.18.23:3000/assets/chat_line_bg.jpg") repeat-x scroll 0 0 #D5D5D5;
+    border: 1px solid #FFFFFF;
+    margin: 0 5px 5px 0;
+    min-height: 10px;
+    padding: 5px 10px;
+    position: relative;
+
+}
+
+#chatTopBar {
+    background: url("http://192.168.18.23:3000/assets/solid_gray.jpg") repeat-x scroll 0 0 #D0D0D0;
+    border: 1px solid #FFFFFF;
+    color: #777777;
+    height: 40px;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    position:absolute;
+    z-index: 1;
+   
+}
+
+#chatBottomBar {
+    background: url("http://192.168.18.23:3000/assets/solid_gray.jpg") repeat-x scroll 0 0 #D0D0D0;
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    position: relative;
+    width: 410px;
+}
+
+#chatBottomBar .tip {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent transparent #EEEEEE;
+    border-image: none;
+    border-style: solid;
+    border-width: 10px;
+    height: 0;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    width: 0;
+}
+
+input {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("http://192.168.18.23:3000/assets/input_bg.jpg") repeat-x scroll 0 0 #DCDCDC;
+    border-color: #C1C1C1 #EEEEEE #EEEEEE #C1C1C1;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #777777;
+    font: 13px/26px Calibri,Arial,sans-serif;
+    height: 26px;
+    margin-right: 5px;
+    outline: medium none;
+    padding: 0 5px;
+    text-shadow: 1px 1px 0 #E4E4E4;
+    width: 400px;
+}
+
+#chatUsers {
+    background-color: #202020;
+    border: 1px solid #111111;
+    height: 360px;
+    position: absolute;
+    right: 0;
+    top: 56px;
+    width: 120px;
+    margin-right: 200px;
+    margin-top: 60px;
+    color: #EEEEEE;
+    padding-left: 20px;
 }

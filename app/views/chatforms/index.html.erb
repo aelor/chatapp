@@ -1,4 +1,4 @@
-<%= link_to "sign out", signout_path, method: "delete"%>
+<div id="chatTopBar" class="rounded">Signed in as: <%= @chatform.name %><%= link_to "sign out", signout_path, method: "delete"%></div>
 <div align="center">
 	<h1>Chat on, on  chatapp!</h1>
 
@@ -31,9 +31,9 @@
    <div class="lists">
       <ul id="texts">
         <%= render @chatforms.order("created_at ASC").last(15)%>
-   </ul> 
+      </ul> 
    </div>
-  <br />
+   <br />
     <%= render 'form'%>
 </div>
 
@@ -41,8 +41,10 @@
 
 <%= subscribe_to "/chatforms" %>
 <br />
+<div id="chatUsers" class="rounded">
 <h3>Currently on chatapp!</h3>
 <% User.all.each do |user|%>
   <%= user.name %>
   <br />
 <% end %>
+</div>
