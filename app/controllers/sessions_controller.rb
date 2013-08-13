@@ -12,7 +12,11 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     if !user
       user = User.new(name: params[:session][:name])
-      sign_in user
+      if !user.name.blank?
+        sign_in user
+      else
+        flash[:error] = 'you must give a name'
+      end
       redirect_to chatforms_path
     else
       sign_in user

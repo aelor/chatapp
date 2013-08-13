@@ -15,3 +15,43 @@
 //= require private_pub
 //= require turbolinks
 //= require_tree .
+
+
+function welcomeMessage()
+			  {
+			    var now = new Date();
+			    var hours = now.getHours();
+			    var msg;
+			    if(hours<12)
+			      msg = "<h3>Good Morning</h3>";
+			    else if(hours<18)
+			      msg = "<h3>Good Afternoon</h3>";
+			    else
+			      msg = "Good Evening";
+			  $('.message').html(msg);  //add message to the element with class message
+			}
+			
+
+function toggleSlider() {
+    if ($("#chatTopBar").is(":visible")) {
+        $("#sometext").animate(
+            {
+                opacity: "0"
+            },
+            600,
+            function(){
+                $("#chatTopBar").slideUp();
+            }
+        );
+    }
+    else {
+        $("#chatTopBar").slideDown(600, function(){
+            $("#sometext").animate(
+                {
+                    opacity: "1"
+                },
+                600
+            );
+        });
+    }   
+}

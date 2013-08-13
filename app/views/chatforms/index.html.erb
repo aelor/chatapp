@@ -1,21 +1,42 @@
-<div id="chatTopBar" class="rounded">Signed in as: <%= @chatform.name %><%= link_to "sign out", signout_path, method: "delete"%></div>
-<div align="center">
-	<h1>Chat on, on  chatapp!</h1>
-
-    <h3 id="counter"><%= pluralize(@chatforms.count, "Message") %></h3>
-      <script>
-      	$(document).ready(function() {
-      		 	$("input").change(function(){
-      		 		var count = $("li").length;
-					    if(count>14&&($("#chatform_content").val()))
-					    {
-					    $("li:first").slideUp("normal", function() { 
-					    	$(this).remove(); 
-					    	});
-					    }
-					  });
-      	});
-      	
+<div id="wrapper">
+	     
+		 <div id="chatTopBarnew" >
+		 	
+			 <div id="chatTopBar">
+				<p id="sometext" style="text-align: center;font-family: Chunkfive;font-style: normal;line-height: 1.1;
+                  font-size: 20px; margin-top: 50px;"> Yes we are still in the beta phase please cooperate !</p>
+			</div>
+		</div>
+		<div id="betaimage" style="position: absolute; z-index: 5; margin-left: 50px; cursor: pointer;">
+		   <img src="/assets/beta.gif" height="40px" width="40px" onclick="toggleSlider();">
+		</div>
+		<h1>Chat on, on  ch@tapp!</h1>
+		<div class="message" >
+					<script>
+					     welcomeMessage();
+					</script>
+					<div class="side">
+						<%= current_user.name %>
+				    </div>
+				</div>
+		<%= button_to "sign out", signout_path, method: "delete", :class =>"submit"%>
+	    <link href="assets/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" />
+		<script src="assets/jquery.cssemoticons.js" type="text/javascript"></script>
+	    <h3 id="counter"><%= pluralize(@chatforms.count, "Message") %></h3>
+	      <script>
+	      	$(document).ready(function() {
+	      		    $("#texts").emoticonize();
+	      		 	$("input").change(function(){
+	      		 		var count = $("li").length;
+						    if(count>14&&($("#chatform_content").val()))
+						    {
+						    $("li:first").slideUp("normal", function() { 
+						    	$(this).remove(); 
+						    	});
+						    }
+						  });
+	      	});
+	      	
      
       /*	function greet()
 					{
@@ -28,14 +49,13 @@
       	*/
       	
       </script>
-   <div class="lists">
+      <div id="lists">
       <ul id="texts">
         <%= render @chatforms.order("created_at ASC").last(15)%>
-      </ul> 
-   </div>
+      </ul>
+      </div> 
    <br />
     <%= render 'form'%>
-</div>
 
 
 
@@ -47,4 +67,5 @@
   <%= user.name %>
   <br />
 <% end %>
+</div>
 </div>

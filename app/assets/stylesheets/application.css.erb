@@ -12,13 +12,9 @@
  *= require_tree .
  */
 
-body {
-    background: url("http://192.168.18.23:3000/assets/page_bg.jpg") repeat-x scroll 0 0 #323232;
-    color: #EEEEEE;
-    font: 15px Calibri,Arial,sans-serif;
+body{
+	background: url("http://192.168.18.23:3000/assets/main-content-pattern.jpg")
 }
-
-
 
 .alert {
   padding: 8px 35px 8px 14px;
@@ -93,26 +89,35 @@ body {
   margin-top: 5px;
 }
 
-.lists {
-	margin-left: 370px;
+#lists{
+	margin-left: 380px;
+	margin-top:100px;
 }
 
 ul {
 	list-style-type:none;
 	text-align: left;
 	line-height: 30px;
+	width: 430px;
 }
 
-ul li{
-	width: 410px;
+@font-face{
 	
+    font-family: Chunkfive;
+    src: url('<%= asset_path('Chunkfive.otf') %>');
 }
 
-h1
-{
-	margin-top: 50px;
+h1 {
+	font-family: Chunkfive;
+    font-style: normal;
+	margin-left: 100px;
 	z-index: 2;
-	position:relative;
+	position:absolute;
+    line-height: 1.1;
+    padding: 0;
+    font-size: 30px;
+    margin-left: 100;
+    top: 0;
 }
 
 .rounded {
@@ -125,7 +130,6 @@ h1
     background: url("http://192.168.18.23:3000/assets/chat_line_bg.jpg") repeat-x scroll 0 0 #D5D5D5;
     border: 1px solid #FFFFFF;
     margin: 0 5px 5px 0;
-    min-height: 10px;
     padding: 5px 10px;
     position: relative;
 
@@ -133,12 +137,26 @@ h1
 
 #chatTopBar {
     background: url("http://192.168.18.23:3000/assets/solid_gray.jpg") repeat-x scroll 0 0 #D0D0D0;
-    border: 1px solid #FFFFFF;
     color: #777777;
-    height: 40px;
-    width: 100%;
-    margin-top: -10px;
-    margin-bottom: 15px;
+    height: 50px;
+    width: 95.18%;
+    left: 0;
+    top: 0;
+    padding: 30px 30px;
+    position:absolute;
+    z-index: 1;
+    display: none;
+   
+}
+
+#chatTopBarnew {
+    background: url("http://192.168.18.23:3000/assets/solid_gray.jpg") repeat-x scroll 0 0 #D0D0D0;
+    color: #777777;
+    height: 0px;
+    width: 95.18%;
+    left: 0;
+    top: 0;
+    padding: 30px 30px;
     position:absolute;
     z-index: 1;
    
@@ -149,7 +167,8 @@ h1
     border: 1px solid #FFFFFF;
     padding: 10px;
     position: relative;
-    width: 410px;
+    width: 400px;
+    margin:auto;
 }
 
 #chatBottomBar .tip {
@@ -185,7 +204,7 @@ input {
     outline: medium none;
     padding: 0 5px;
     text-shadow: 1px 1px 0 #E4E4E4;
-    width: 400px;
+    width: 390px;
 }
 
 #chatUsers {
@@ -196,8 +215,53 @@ input {
     right: 0;
     top: 56px;
     width: 120px;
-    margin-right: 200px;
-    margin-top: 60px;
+    margin-right: 230px;
+    margin-top: 80px;
     color: #EEEEEE;
     padding-left: 20px;
 }
+
+/** button style**/
+	
+.submit {
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)) repeat scroll 0 0 #888888;
+    border: 1px solid #636363;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 2px 0 rgba(253, 252, 252, 0.35) inset, 0 -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 27px;
+    line-height: 13px;
+    margin-left: 85%;
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    width: 110px;
+    position: absolute;
+    z-index: 100;
+    margin-right: 250px;
+}
+.submit:hover {
+    background-image: -moz-linear-gradient(center bottom , rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+}
+.submit:active {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset, 0 3px 13px 3px rgba(0, 0, 0, 0.3) inset;
+    color: #DDDDDD;
+}
+
+.message{
+	position:absolute;
+	z-index: 3;
+	margin-left: 900px;
+	font: 17px/30px Chunkfive;
+}
+
+/** to place headers side by side**/
+	
+.side { vertical-align:absbottom; display:inline }
+
+/*** text ****//
+

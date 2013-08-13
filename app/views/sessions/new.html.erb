@@ -1,5 +1,21 @@
 <h1>Enter a name and start your chat !</h1>
-<p><%= form_for(:session, url: sessions_path) do |f| %>
+		<script>
+				function validateForm()
+				{
+					 var name = document.getElementById("session_name");
+					
+					 if(name.value == "")
+					 {
+					   alert("Please enter first name")
+					   return false;
+					 }
+					 else
+					 {
+					   return true;
+					 }
+		        }
+	  </script>
+	<p><%= form_for(:session, url: sessions_path, :html => { :onsubmit => 'validateForm();' }) do |f| %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>
