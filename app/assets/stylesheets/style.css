@@ -1,0 +1,58 @@
+@media only screen and (min-width : 150px) and (max-width : 780px) 
+{
+	.body {
+		clear: both; 
+		margin: 0 auto; 
+		width: 90%;
+		font-size: 90%;
+	}
+	
+	ul {
+			list-style-type:none;
+			text-align: left;
+			line-height: 20px;
+			width: 230px;
+	    }
+	    
+	#chatUsers{
+		position: relative;
+		float: bottom;
+		width: 400px;
+		height: 200px;
+		margin: auto;
+	    padding: 10px;
+	   
+	}
+	
+			
+	.submit {
+	    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)) repeat scroll 0 0 #888888;
+	    border: 1px solid #636363;
+	    border-radius: 4px 4px 4px 4px;
+	    box-shadow: 0 1px 2px 0 rgba(253, 252, 252, 0.35) inset, 0 -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+	    color: #FFFFFF;
+	    cursor: pointer;
+	    font-family: Arial,Helvetica,sans-serif;
+	    font-size: 13px;
+	    font-weight: bold;
+	    height: 27px;
+	    line-height: 13px;
+	    margin-left: 75%;
+	    padding: 0;
+	    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+	    width: 110px;
+	    position: absolute;
+	    z-index: 100;
+	    
+	}
+	.submit:hover {
+	    background-image: -moz-linear-gradient(center bottom , rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+	    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+	}
+	.submit:active {
+	    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15) inset, 0 3px 13px 3px rgba(0, 0, 0, 0.3) inset;
+	    color: #DDDDDD;
+	}
+
+	
+}

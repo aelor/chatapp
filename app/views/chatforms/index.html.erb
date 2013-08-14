@@ -1,4 +1,14 @@
-<div id="wrapper">
+<!DOCTYPE html>
+   <html lang="en">
+		<head>
+			<title>Ch@tapp !</title>
+			<meta charset="utf-8" />
+			
+			<link rel="stylesheet" href="/assets/style.css" type="text/css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		</head>
+
 	     
 		 <div id="chatTopBarnew" >
 		 	
@@ -11,13 +21,11 @@
 		   <img src="/assets/beta.gif" height="40px" width="40px" onclick="toggleSlider();">
 		</div>
 		<h1>Chat on, on  ch@tapp!</h1>
-		<div class="message" >
+		<div class="message">
 					<script>
 					     welcomeMessage();
 					</script>
-					<div class="side">
-						<%= current_user.name %>
-				    </div>
+						<h3><%= current_user.name %> !</h3>
 				</div>
 		<%= button_to "sign out", signout_path, method: "delete", :class =>"submit"%>
 	    <link href="assets/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" />
@@ -49,23 +57,22 @@
       	*/
       	
       </script>
-      <div id="lists">
-      <ul id="texts">
-        <%= render @chatforms.order("created_at ASC").last(15)%>
-      </ul>
-      </div> 
-   <br />
-    <%= render 'form'%>
+    <div id="wrapper">
+			<div id="texts">
+			     <%= render @chatforms.order("created_at ASC").last(15)%>
+			</div>
+			     <%= render 'form'%>
+			<div id="chatUsers" class="rounded">
+			   <h3>Currently on chatapp!</h3>
+				  <% User.all.each do |user|%>
+				  <%= user.name %>
+				  <br />
+				  <% end %>
+			</div>
+			
+			
+			<%= subscribe_to "/chatforms" %>
+			
 
-
-
-<%= subscribe_to "/chatforms" %>
-<br />
-<div id="chatUsers" class="rounded">
-<h3>Currently on chatapp!</h3>
-<% User.all.each do |user|%>
-  <%= user.name %>
-  <br />
-<% end %>
-</div>
-</div>
+     </div>
+</html>

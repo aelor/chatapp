@@ -1,7 +1,7 @@
 <% publish_to "/chatforms" do %>
 $("#texts").append("<%= escape_javascript render(@chatform) %>").emoticonize();
 $('title').text('New message');
-$("li:first").slideUp("normal", function() { 
+$("#chat:first").slideUp("normal", function() { 
 					       	$(this).remove(); 
 					    	});
 <% end %>

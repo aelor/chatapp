@@ -23,11 +23,11 @@ function welcomeMessage()
 			    var hours = now.getHours();
 			    var msg;
 			    if(hours<12)
-			      msg = "<h3>Good Morning</h3>";
+			      msg = "<h3>Good Morning</h3>";			      
 			    else if(hours<18)
-			      msg = "<h3>Good Afternoon</h3>";
+		          msg = "<h3>Good Afternoon</h3>";
 			    else
-			      msg = "Good Evening";
+			      msg = "<h3>Good Evening</h3>";
 			  $('.message').html(msg);  //add message to the element with class message
 			}
 			
